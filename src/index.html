@@ -12,11 +12,11 @@
     <div x-data="{darkMode: false, startMenu: false, notificationsArea: false}" x-bind:class="darkMode ? 'dark' : ''" class="min-w-5xl">
         <!--CONTAINER-->
         <div id="container" class="h-screen bg-cover bg-center flex flex-col dark:text-gray-100 overflow-hidden"
-        x-bind:style="darkMode ? 'background-image: url(\'img/win11_wallpaper_dark.jpg\');' : 'background-image: url(\'img/pexels-jess-bailey-designs-1097930.jpg\');'">
+        x-bind:style="darkMode ? 'background-image: url(\'img/win11_wallpaper_dark.jpg\');' : 'background-image: url(\'img/grid.png\');'">
             <!--DESKTOP-->
             <div id="desktop" class="relative flex-grow">
                 <!-- Start Menu -->
-                <div id="start-menu" class="absolute bottom-0 left-1/4 w-3/5 xl:w-2/5 -ml-96 mx-auto rounded-xl shadow-lg bg-blue-100 backdrop-filter backdrop-blur-lg overflow-hidden dark:bg-gray-800 dark:bg-opacity-90"
+                <div id="start-menu" class="absolute bottom-0 left-0  w-3/4 xl:w-2/5 mx-auto shadow-lg bg-blue-100 backdrop-filter backdrop-blur-lg overflow-hidden dark:bg-gray-800 dark:bg-opacity-90"
                 x-show="startMenu"
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="transform opacity-0 translate-y-full"
