@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
-    <title>Ariez Flores - Portfolio OS</title>
+    <title>Ariez Flores - Portfolio</title>
 </head>
 <body>
     <div x-data="{darkMode: false, startMenu: false, notificationsArea: false}" x-bind:class="darkMode ? 'dark' : ''" class="min-w-5xl">
@@ -16,7 +16,7 @@
             <!--DESKTOP-->
             <div id="desktop" class="relative flex-grow">
                 <!-- Start Menu -->
-                <div id="start-menu" class="absolute bottom-0 left-0  w-3/4 xl:w-2/5 mx-auto shadow-lg bg-blue-100 backdrop-filter backdrop-blur-lg overflow-hidden dark:bg-gray-800 dark:bg-opacity-90"
+                <div id="start-menu" class="absolute bottom-0 left-0  w-3/4 xl:w-2/5 mx-auto shadow-lg bg-blue-100 backdrop-filter backdrop-blur-lg overflow-hidden dark:bg-start-above dark:bg-opacity-50"
                 x-show="startMenu"
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="transform opacity-0 translate-y-full"
@@ -29,46 +29,47 @@
                 <div class="flex-grow px-12 py-10 space-y-6">
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <h2 class="font-semibold">Pinned</h2>
+                            <h2 class="font-semibold">Unity</h2>
                             <a class="inline-flex items-center space-x-1 text-left text-xs font-medium bg-white rounded px-2 py-1 hover:bg-opacity-50 active:bg-opacity-100 focus:outline-none dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 dark:active:bg-opacity-30" href="javascript:void(0)">
-                              <span>All Apps</span>
+                              <span>All Works</span>
                               <svg class="inline-block w-5 h-5" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.75 8.75L14.25 12L10.75 15.25"></path>
                               </svg>
                             </a>
                         </div>
                         <div class="grid grid-cols-6 gap-1 text-center">
-                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/folder-downloads.png" alt="Folder Downloads">
-                                <span>Downloads</span>
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.lrnventures.a.adb.resultsreality" target="_blank">
+                                <img class="w-16 mx-auto mb-2" src="img/icons/adb_rr_logo.png" alt="Results Reality">
+                                <span>Asian Development Bank</span>
+                                <span>Results Reality AR</span>
+                            </a>
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.LRNVenturesIncZeteoInnovations.TsubakiAR" target="_blank">
+                                <img class="w-16 mx-auto mb-2" src="img/icons/tsubaki_ar.png" alt="Tsubaki AR">
+                                <span>Tsubaki Hotel - AR</span>
+                            </a>
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.zeteoinnovations.zeteo.zetego" target="_blank">
+                                <img class="w-16 mx-auto mb-2" src="img/icons/zeteo_go.png" alt="Zeteo Go">
+                                <span>Zeteo Go</span>
+                            </a>
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.jollyrabbits.game.piraterun" target="_blank">
+                                <img class="w-16 mx-auto mb-2" src="img/icons/seven_seas_run.png" alt="Seven Seas Run">
+                                <span>Seven Seas Run</span>
+                            </a>
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.yownugames.memorymasters" target="_blank">
+                                <img class="w-16 mx-auto mb-2" src="img/icons/memory_masters.png" alt="memory masters">
+                                <span>Memory Masters</span>
+                            </a>
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.lrnventures.a.dost.starlibrary" target="_blank">
+                                <img class="w-16 mx-auto mb-2" src="img/icons/star_library.png" alt="star library">
+                                <span>DOST-STII - Star Library</span>
+                            </a>
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.lrnventures.a.dostnastpshc.virtualtour" target="_blank">
+                                <img class="w-16 mx-auto mb-2" src="img/icons/dost_nast.jpg" alt="dost nast virtual tour">
+                                <span>DOST-NAST - Virtual Tour</span>
                             </a>
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/folder-videos.png" alt="Folder Videos">
-                                <span>Videos</span>
-                            </a>
-                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/folder-games.png" alt="Folder Games">
-                                <span>Games</span>
-                            </a>
-                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/folder-links.png" alt="Folder Favorites">
-                                <span>Favorites</span>
-                            </a>
-                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/folder-user.png" alt="Folder Folder">
-                                <span>User Folder</span>
-                            </a>
-                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/folder-zip.png" alt="Folder Archives">
-                                <span>Archives</span>
-                            </a>
-                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/video.png" alt="Movies">
-                                <span>Movies</span>
-                            </a>
-                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/phone.png" alt="Mobile">
-                                <span>Mobile</span>
+                                <img class="w-16 mx-auto mb-2" src="img/icons/similac_gainschool.png" alt="similac gainschool explorers">
+                                <span>Abbott - Similac Gainschool Explorers</span>
                             </a>
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
                                 <img class="w-16 mx-auto mb-2" src="img/icons/options.png" alt="Settings">
@@ -80,55 +81,23 @@
                             </a>
                         </div>
                     </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h2 class="font-semibold">Recommended</h2>
-                            <a class="inline-flex items-center space-x-1 text-left text-xs font-medium bg-white rounded px-2 py-1 hover:bg-opacity-50 active:bg-opacity-100 focus:outline-none dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 dark:active:bg-opacity-30" href="https://pixelcave.com/freebies">
-                              <span>More Freebies</span>
-                              <svg class="inline-block w-5 h-5" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.75 8.75L14.25 12L10.75 15.25"></path>
-                              </svg>
-                            </a>
-                        </div>
-                        <div class="grid grid-cols-2 gap-1">
-                            <a class="flex items-center space-x-3 p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://pixelcave.com">
-                                <img src="img/pixelcave-logo.png" alt="pixelcave logo">
-                                <div>
-                                  <h3>
-                                    pixelcave
-                                  </h3>
-                                  <p class="opacity-75">
-                                    Check out more projects
-                                  </p>
-                                </div>
-                            </a>
-                            <a class="flex items-center space-x-3 p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://pixelcave.com/download/freebie-45-windows-11-tailwind">
-                                <svg class="hi-solid hi-download inline-block w-10 h-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-                                <div>
-                                  <h3>
-                                    Download this template
-                                  </h3>
-                                  <p class="opacity-75">
-                                    Feel free to grab it and play around
-                                  </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
                 </div>
-                    <div class="flex-none flex items-center justify-between px-12 py-4 bg-blue-200 bg-opacity-50 backdrop-filter backdrop-blur-lg dark:bg-gray-800 dark:bg-opacity-90">
-                        <a class="-ml-3 p-3 font-medium leading-5 rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://twitter.com/pixelcave_john">
-                            <span>By John Champ</span><br>
-                            <span class="text-sm opacity-75">@pixelcave_john</span>
+                    <div class="flex-none flex items-center justify-between px-12 py-4 bg-start-above bg-opacity-50 backdrop-filter backdrop-blur-lg dark:bg-start-above">
+                        <a class="-ml-3 font-medium leading-5 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-start-above dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://twitter.com/aeriznavarro">
+                            <span>By Ariez Flores</span><br>
+                            <span class="text-sm opacity-75">@aeriznavarro</span>
                         </a>
-                        <button type="button" class="-mr-3 p-3 rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
-                            <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.2813 12.0313L11.9687 5.7187C11.4896 5.23964 10.6829 5.36557 10.3726 5.96785L6.75 13L11 17.25L18.0321 13.6274C18.6344 13.3171 18.7604 12.5104 18.2813 12.0313Z"></path>
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 19.25L8.5 15.5"></path>
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.75 7.25L16.25 4.75"></path>
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.75 10.25L19.25 7.75"></path>
+                        <div>
+                          <button type="button" onclick="window.location.href='https://gitlab.com/ariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"viewBox="0 0 448 512">
+                              <path d="M48 32H400C426.5 32 448 53.5 448 80V432C448 458.5 426.5 480 400 480H48C21.5 480 0 458.5 0 432V80C0 53.5 21.5 32 48 32zM382.1 224.9L337.5 108.5C336.6 106.2 334.9 104.2 332.9 102.9C331.3 101.9 329.5 101.3 327.7 101.1C325.9 100.9 324 101.2 322.3 101.8C320.6 102.5 319 103.5 317.8 104.9C316.6 106.3 315.7 107.9 315.2 109.7L285 201.9H162.1L132.9 109.7C132.4 107.9 131.4 106.3 130.2 104.9C128.1 103.6 127.4 102.5 125.7 101.9C123.1 101.2 122.1 100.1 120.3 101.1C118.5 101.3 116.7 101.9 115.1 102.9C113.1 104.2 111.5 106.2 110.6 108.5L65.94 224.9L65.47 226.1C59.05 242.9 58.26 261.3 63.22 278.6C68.18 295.9 78.62 311.1 92.97 321.9L93.14 322L93.52 322.3L161.4 373.2L215.6 414.1C217.1 415.1 220.9 416.9 223.9 416.9C226.9 416.9 229.9 415.1 232.3 414.1L286.4 373.2L354.8 322L355 321.9C369.4 311 379.8 295.8 384.8 278.6C389.7 261.3 388.1 242.9 382.5 226.1L382.1 224.9z"/>
                             </svg>
-                        </button>
+                          </button>
+                          <button type="button" onclick="window.location.href='https://github.com/iamariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 496 512">
+                              <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                          </button>
+                        </div>
                     </div>
                 </div>
                 <!-- END Start Menu -->
@@ -241,7 +210,7 @@
             <!-- END Desktop -->
 
             <!-- Taskbar -->
-            <div id="taskbar" class="relative flex-none z-10 flex justify-center shadow-lg bg-green-600 bg-opacity-75 border-t border-green-300 border-opacity-20 backdrop-filter backdrop-blur-sm px-56 h-10">
+            <div id="taskbar" class="relative flex-none z-10 flex justify-center shadow-lg bg-task-brown border-t border-amber-900 border-opacity-20 backdrop-filter backdrop-blur-sm px-56 h-10">
                 <!-- Apps -->
                 <nav class="absolute bottom-0 left-0 h-10 space-x-1 flex items-center">
                     <button type="button" @click="startMenu = !startMenu" class="relative group focus:outline-none bg-white rounded transition duration-150 bg-opacity-0 hover:bg-opacity-50 active:bg-opacity-75 dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-25 dark:active:bg-opacity-50">
@@ -276,7 +245,7 @@
                 
                 <nav class="absolute top-0 right-0 bottom-0 flex items-center w-30 h-10">
                     <button type="button" class="focus:outline-none bg-white rounded transform transition duration-150 bg-opacity-0 hover:bg-opacity-50 active:bg-opacity-100 active:scale-90 h-8 flex items-center justify-center text-xs font-medium px-2 dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-25 dark:active:bg-opacity-50">
-                        09:15 PM June 17, 2021
+                        <span id="date"></span>
                     </button>
                     <button type="button" @click="notificationsArea = !notificationsArea" class="focus:outline-none bg-white rounded transform transition duration-150 bg-opacity-0 hover:bg-opacity-50 active:bg-opacity-100 active:scale-90 w-8 h-8 flex items-center justify-center dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-25 dark:active:bg-opacity-50">
                         <svg class="block w-5 h-5" fill="none" viewBox="0 0 24 24">
@@ -326,6 +295,62 @@
     document.getElementById('btn-fullscreen').addEventListener('click', function () {
       toggleFullscreen();
     });
+
+    function updateTime(){
+      var dateInfo = new Date();
+
+      var hr,
+      min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes(),
+      sec = (dateInfo.getSeconds() < 10) ? "0" + dateInfo.getSeconds() : dateInfo.getSeconds(),
+      am_pm = (dateInfo.getHours() >= 12) ? "PM" : "AM";
+
+      if(dateInfo.getHours() == 0){
+        hr = 12;
+      } else if(dateInfo.getHours() > 12){
+        hr = dateInfo.getHours() - 12;
+      } else {
+        hr = dateInfo.getHours();
+      }
+
+      var currentTime = hr + ":" + min + ":" + sec;
+
+      var dow = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+
+      month = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+
+      day = dateInfo.getDate();
+      year = dateInfo.getFullYear();
+      currentMonth = dateInfo.getMonth() + 1;
+      var currentDate = dow[dateInfo.getDay()] + ", " + month[dateInfo.getMonth()] + " " + day + ", " + dateInfo.getFullYear();
+      document.getElementById("date").innerHTML = currentDate + " " + currentTime + " " + am_pm;
+      console.log(currentDate);
+    };
+
+    updateTime();
+    setInterval(function(){
+      updateTime();
+    }, 1000);
 
   </script>
 </body>
