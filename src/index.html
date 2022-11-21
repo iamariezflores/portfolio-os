@@ -9,14 +9,15 @@
     <title>Ariez Flores - Portfolio</title>
 </head>
 <body>
-    <div x-data="{darkMode: false, startMenu: false, notificationsArea: false}" x-bind:class="darkMode ? 'dark' : ''" class="min-w-5xl">
+    <div x-data="{darkMode: false, startMenu: false,  similacWindow: false, zeteostoryWindow: false, notificationsArea: false}" x-bind:class="darkMode ? 'dark' : ''" class="min-w-5xl">
         <!--CONTAINER-->
         <div id="container" class="h-screen bg-cover bg-center flex flex-col dark:text-gray-100 overflow-hidden"
         x-bind:style="darkMode ? 'background-image: url(\'img/win11_wallpaper_dark.jpg\');' : 'background-image: url(\'img/grid.png\');'">
+        
             <!--DESKTOP-->
             <div id="desktop" class="relative flex-grow">
                 <!-- Start Menu -->
-                <div id="start-menu" class="absolute bottom-0 left-0  w-3/4 xl:w-2/5 mx-auto shadow-lg bg-blue-100 backdrop-filter backdrop-blur-lg overflow-hidden dark:bg-start-above dark:bg-opacity-50"
+                <div id="start-menu" class="absolute bottom-0 xl:left-0 h-screen w-screen xl:w-2/5 xl:h-4/5 mx-auto bg-start-above shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-50"
                 x-show="startMenu"
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="transform opacity-0 translate-y-full"
@@ -26,86 +27,205 @@
                 x-transition:leave-end="transform opacity-0 translate-y-60"
                 @click.away="startMenu = false"
                 >
-                <div class="flex-grow px-12 py-10 space-y-6">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h2 class="font-semibold">Unity</h2>
-                            <a class="inline-flex items-center space-x-1 text-left text-xs font-medium bg-white rounded px-2 py-1 hover:bg-opacity-50 active:bg-opacity-100 focus:outline-none dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 dark:active:bg-opacity-30" href="javascript:void(0)">
+                <div class="pt-20 px-12 xl:flex-grow xl:px-12 xl:py-10 xl:space-y-6">
+                    <div class="xl-space-y-4">
+                        <div class="flex items-center justify-between mb-10 xl:mb-0">
+                            <h2 class="font-semibold">Unity Projects (Published)</h2>
+                            <a class="inline-flex items-center justify-between space-x-1 text-left text-xs font-medium bg-white rounded px-2 py-1 hover:bg-opacity-50 active:bg-opacity-100 focus:outline-none dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 dark:active:bg-opacity-30" href="javascript:void(0)">
                               <span>All Works</span>
                               <svg class="inline-block w-5 h-5" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.75 8.75L14.25 12L10.75 15.25"></path>
                               </svg>
                             </a>
                         </div>
-                        <div class="grid grid-cols-6 gap-1 text-center">
+                        <div class="grid grid-cols-2 xl:grid-cols-4 md:grid-cols-6 gap-4 md:gap-1 xl:gap-1 text-center xl:mt-4">
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.lrnventures.a.adb.resultsreality" target="_blank">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/adb_rr_logo.png" alt="Results Reality">
-                                <span>Asian Development Bank</span>
+                                <img class="w-10 mx-auto mb-2" src="img/icons/adb_rr_logo.png" alt="Results Reality">
+                                <span>Asian Development Bank - </span>
                                 <span>Results Reality AR</span>
                             </a>
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.LRNVenturesIncZeteoInnovations.TsubakiAR" target="_blank">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/tsubaki_ar.png" alt="Tsubaki AR">
+                                <img class="w-10 mx-auto mb-2" src="img/icons/tsubaki_ar.png" alt="Tsubaki AR">
                                 <span>Tsubaki Hotel - AR</span>
                             </a>
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.zeteoinnovations.zeteo.zetego" target="_blank">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/zeteo_go.png" alt="Zeteo Go">
+                                <img class="w-10 mx-auto mb-2" src="img/icons/zeteo_go.png" alt="Zeteo Go">
                                 <span>Zeteo Go</span>
                             </a>
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.jollyrabbits.game.piraterun" target="_blank">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/seven_seas_run.png" alt="Seven Seas Run">
+                                <img class="w-10 mx-auto mb-2" src="img/icons/seven_seas_run.png" alt="Seven Seas Run">
                                 <span>Seven Seas Run</span>
                             </a>
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.yownugames.memorymasters" target="_blank">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/memory_masters.png" alt="memory masters">
+                                <img class="w-10 mx-auto mb-2" src="img/icons/memory_masters.png" alt="memory masters">
                                 <span>Memory Masters</span>
                             </a>
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.lrnventures.a.dost.starlibrary" target="_blank">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/star_library.png" alt="star library">
+                                <img class="w-10 mx-auto mb-2" src="img/icons/star_library.png" alt="star library">
                                 <span>DOST-STII - Star Library</span>
                             </a>
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.lrnventures.a.dostnastpshc.virtualtour" target="_blank">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/dost_nast.jpg" alt="dost nast virtual tour">
+                                <img class="w-10 mx-auto mb-2" src="img/icons/dost_nast.jpg" alt="dost nast virtual tour">
                                 <span>DOST-NAST - Virtual Tour</span>
                             </a>
-                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
-                                <img class="w-16 mx-auto mb-2" src="img/icons/similac_gainschool.png" alt="similac gainschool explorers">
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" @click="similacWindow = !similacWindow; startMenu = false">
+                                <img class="w-10 mx-auto mb-2" src="img/icons/similac_gainschool.png" alt="similac gainschool explorers">
                                 <span>Abbott - Similac Gainschool Explorers</span>
                             </a>
-                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
+                            <!--<a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
                                 <img class="w-16 mx-auto mb-2" src="img/icons/options.png" alt="Settings">
                                 <span>Settings</span>
                             </a>
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="javascript:void(0)">
                                 <img class="w-16 mx-auto mb-2" src="img/icons/bin.png" alt="Bin">
                                 <span>Bin</span>
+                            </a>-->
+                        </div>
+                        <div class="xl-space-y-4">
+                          <h2 class="font-semibold">Others</h2>
+                          <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-6 gap-4 md:gap-1 xl:gap-1 text-center">
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" @click="zeteostoryWindow = !zeteostoryWindow; startMenu = false;">
+                              <img class="w-10 mx-auto mb-2" src="img/icons/zeteo_innovations.jpg" alt="zeteo story">
+                              <span>Zeteo Story - Visual Novel</span>
                             </a>
+                            <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://8kproduction.com/ulysses/training/app/index.php">
+                              <img class="w-10 mx-auto mb-2" src="img/icons/zeteo_innovations.jpg" alt="zeteo story">
+                              <span>Booking Website - Valero</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="">
+
                         </div>
                     </div>
+                    
                 </div>
-                    <div class="flex-none flex items-center justify-between px-12 py-4 bg-start-above bg-opacity-50 backdrop-filter backdrop-blur-lg dark:bg-start-above">
-                        <a class="-ml-3 font-medium leading-5 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-start-above dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://twitter.com/aeriznavarro">
-                            <span>By Ariez Flores</span><br>
-                            <span class="text-sm opacity-75">@aeriznavarro</span>
-                        </a>
-                        <div>
-                          <button type="button" onclick="window.location.href='https://gitlab.com/ariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"viewBox="0 0 448 512">
-                              <path d="M48 32H400C426.5 32 448 53.5 448 80V432C448 458.5 426.5 480 400 480H48C21.5 480 0 458.5 0 432V80C0 53.5 21.5 32 48 32zM382.1 224.9L337.5 108.5C336.6 106.2 334.9 104.2 332.9 102.9C331.3 101.9 329.5 101.3 327.7 101.1C325.9 100.9 324 101.2 322.3 101.8C320.6 102.5 319 103.5 317.8 104.9C316.6 106.3 315.7 107.9 315.2 109.7L285 201.9H162.1L132.9 109.7C132.4 107.9 131.4 106.3 130.2 104.9C128.1 103.6 127.4 102.5 125.7 101.9C123.1 101.2 122.1 100.1 120.3 101.1C118.5 101.3 116.7 101.9 115.1 102.9C113.1 104.2 111.5 106.2 110.6 108.5L65.94 224.9L65.47 226.1C59.05 242.9 58.26 261.3 63.22 278.6C68.18 295.9 78.62 311.1 92.97 321.9L93.14 322L93.52 322.3L161.4 373.2L215.6 414.1C217.1 415.1 220.9 416.9 223.9 416.9C226.9 416.9 229.9 415.1 232.3 414.1L286.4 373.2L354.8 322L355 321.9C369.4 311 379.8 295.8 384.8 278.6C389.7 261.3 388.1 242.9 382.5 226.1L382.1 224.9z"/>
-                            </svg>
-                          </button>
-                          <button type="button" onclick="window.location.href='https://github.com/iamariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 496 512">
-                              <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-                          </button>
+                      <div class="bg-start-above absolute bottom-0 w-full">
+                        <div class="flex items-center justify-between px-12 py-4">
+                          <a class="-ml-3 font-medium leading-5 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-start-above dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://twitter.com/aeriznavarro">
+                              <span>By Ariez Flores</span><br>
+                              <span class="text-sm opacity-75">@aeriznavarro</span>
+                          </a>
+                          <div>
+                            <button type="button" onclick="window.location.href='https://gitlab.com/ariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"viewBox="0 0 448 512">
+                                <path d="M48 32H400C426.5 32 448 53.5 448 80V432C448 458.5 426.5 480 400 480H48C21.5 480 0 458.5 0 432V80C0 53.5 21.5 32 48 32zM382.1 224.9L337.5 108.5C336.6 106.2 334.9 104.2 332.9 102.9C331.3 101.9 329.5 101.3 327.7 101.1C325.9 100.9 324 101.2 322.3 101.8C320.6 102.5 319 103.5 317.8 104.9C316.6 106.3 315.7 107.9 315.2 109.7L285 201.9H162.1L132.9 109.7C132.4 107.9 131.4 106.3 130.2 104.9C128.1 103.6 127.4 102.5 125.7 101.9C123.1 101.2 122.1 100.1 120.3 101.1C118.5 101.3 116.7 101.9 115.1 102.9C113.1 104.2 111.5 106.2 110.6 108.5L65.94 224.9L65.47 226.1C59.05 242.9 58.26 261.3 63.22 278.6C68.18 295.9 78.62 311.1 92.97 321.9L93.14 322L93.52 322.3L161.4 373.2L215.6 414.1C217.1 415.1 220.9 416.9 223.9 416.9C226.9 416.9 229.9 415.1 232.3 414.1L286.4 373.2L354.8 322L355 321.9C369.4 311 379.8 295.8 384.8 278.6C389.7 261.3 388.1 242.9 382.5 226.1L382.1 224.9z"/>
+                              </svg>
+                            </button>
+                            <button type="button" onclick="window.location.href='https://github.com/iamariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 496 512">
+                                <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                            </button>
+                          </div>
                         </div>
                     </div>
                 </div>
                 <!-- END Start Menu -->
 
+                <!-- Visual Novel Menu -->
+                <div id="similac-window" class="absolute bottom-0 left-0 w-screen xl:w-2/5 mx-auto shadow-lg bg-blue-100 backdrop-filter backdrop-blur-lg overflow-hidden dark:bg-start-above dark:bg-opacity-50"
+                  x-show="similacWindow"
+                  x-transition:enter="transition ease-out duration-300"
+                  x-transition:enter-start="transform opacity-0 translate-y-full"
+                  x-transition:enter-end="transform opacity-100 translate-y-0"
+                  x-transition:leave="transition ease-in duration-125"
+                  x-transition:leave-start="transform opacity-100 translate-y-0"
+                  x-transition:leave-end="transform opacity-0 translate-y-60"
+                  @click.away="similacWindow = false"
+                >
+                  <div class="flex-grow px-12 py-10 space-y-6">
+                      <div class="space-y-4">
+                          <div class="flex items-center justify-between">
+                              <h2 class="font-semibold">Similac Gainschool E-xplorers</h2>
+                          </div>
+                          <p>
+                            Similac Gainschool E-xplorers is a promotional app conceptualize by Abbott to promote sales of the 
+                            Similac Gainschool Milk, it was removed by request of Abbottt from the Playstore and Appstore 
+                            after the duration of the promotion.
+                          </p>
+                          <div class="pt-6">
+                            <span>Only Youtube videos from users exists to showcase the App</span>
+                          </div>
+                          <div class="pt-6 flex items-center justify-between">
+                            <a href="https://www.youtube.com/watch?v=tTv2A7Ivk-E" target="_blank"><span class="text-blue-700 underline">Video 1</span></a>
+                            <a href="https://www.youtube.com/watch?v=lb_Wu4OgIlc" target="_blank"><span class="text-blue-700 underline">Video 1</span></a>
+                            <a href="https://www.youtube.com/watch?v=9mi4Fs5jEBI" target="_blank"><span class="text-blue-700 underline">Video 1</span></a>
+                            <a href="https://www.youtube.com/watch?v=ff4KGAxCktM" target="_blank"><span class="text-blue-700 underline">Video 1</span></a>
+                          </div>
+                          
+                      </div>
+                  </div>
+                  <div class="flex-none flex items-center justify-between px-12 py-4 bg-start-above bg-opacity-50 backdrop-filter backdrop-blur-lg dark:bg-start-above">
+                    <a class="-ml-3 font-medium leading-5 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-start-above dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://twitter.com/aeriznavarro">
+                        <span>By Ariez Flores</span><br>
+                        <span class="text-sm opacity-75">@aeriznavarro</span>
+                    </a>
+                    <div>
+                      <button type="button" onclick="window.location.href='https://gitlab.com/ariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"viewBox="0 0 448 512">
+                          <path d="M48 32H400C426.5 32 448 53.5 448 80V432C448 458.5 426.5 480 400 480H48C21.5 480 0 458.5 0 432V80C0 53.5 21.5 32 48 32zM382.1 224.9L337.5 108.5C336.6 106.2 334.9 104.2 332.9 102.9C331.3 101.9 329.5 101.3 327.7 101.1C325.9 100.9 324 101.2 322.3 101.8C320.6 102.5 319 103.5 317.8 104.9C316.6 106.3 315.7 107.9 315.2 109.7L285 201.9H162.1L132.9 109.7C132.4 107.9 131.4 106.3 130.2 104.9C128.1 103.6 127.4 102.5 125.7 101.9C123.1 101.2 122.1 100.1 120.3 101.1C118.5 101.3 116.7 101.9 115.1 102.9C113.1 104.2 111.5 106.2 110.6 108.5L65.94 224.9L65.47 226.1C59.05 242.9 58.26 261.3 63.22 278.6C68.18 295.9 78.62 311.1 92.97 321.9L93.14 322L93.52 322.3L161.4 373.2L215.6 414.1C217.1 415.1 220.9 416.9 223.9 416.9C226.9 416.9 229.9 415.1 232.3 414.1L286.4 373.2L354.8 322L355 321.9C369.4 311 379.8 295.8 384.8 278.6C389.7 261.3 388.1 242.9 382.5 226.1L382.1 224.9z"/>
+                        </svg>
+                      </button>
+                      <button type="button" onclick="window.location.href='https://github.com/iamariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 496 512">
+                          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Visual Novel Menu -->
+
+                <!-- Similac Menu -->
+                <div id="zeteostory-window" class="absolute bottom-0 left-0 w-screen xl:w-2/5 mx-auto shadow-lg bg-blue-100 backdrop-filter backdrop-blur-lg overflow-hidden dark:bg-start-above dark:bg-opacity-50"
+                  x-show="zeteostoryWindow"
+                  x-transition:enter="transition ease-out duration-300"
+                  x-transition:enter-start="transform opacity-0 translate-y-full"
+                  x-transition:enter-end="transform opacity-100 translate-y-0"
+                  x-transition:leave="transition ease-in duration-125"
+                  x-transition:leave-start="transform opacity-100 translate-y-0"
+                  x-transition:leave-end="transform opacity-0 translate-y-60"
+                  @click.away="zeteostoryWindow = false"
+                >
+                  <div class="flex-grow px-12 py-10 space-y-6">
+                      <div class="space-y-4">
+                          <div class="flex items-center justify-between">
+                              <h2 class="font-semibold">Zeteo Story</h2>
+                          </div>
+                          <span>Zeteo Story is made with Ren'Py</span>
+                          <p>
+                            This Visual Novel is part of LRN Ventures Inc/Zeteo Innovations Zeteo Quest program for schools, 
+                            it follows the adventures of Captain Kuya and the Zeteonauts
+                          </p>
+                          <div class="pt-6">
+                            View it (Best viewed using Chrome or Edge) <a href="https://8kproduction.com/zeteostory/" target="_blank"><span class="text-blue-700 underline">Here</span></a>
+                          </div>
+                          
+                      </div>
+                  </div>
+                  <div class="flex-none flex items-center justify-between px-12 py-4 bg-start-above bg-opacity-50 backdrop-filter backdrop-blur-lg dark:bg-start-above">
+                    <a class="-ml-3 font-medium leading-5 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-start-above dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://twitter.com/aeriznavarro">
+                        <span>By Ariez Flores</span><br>
+                        <span class="text-sm opacity-75">@aeriznavarro</span>
+                    </a>
+                    <div>
+                      <button type="button" onclick="window.location.href='https://gitlab.com/ariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"viewBox="0 0 448 512">
+                          <path d="M48 32H400C426.5 32 448 53.5 448 80V432C448 458.5 426.5 480 400 480H48C21.5 480 0 458.5 0 432V80C0 53.5 21.5 32 48 32zM382.1 224.9L337.5 108.5C336.6 106.2 334.9 104.2 332.9 102.9C331.3 101.9 329.5 101.3 327.7 101.1C325.9 100.9 324 101.2 322.3 101.8C320.6 102.5 319 103.5 317.8 104.9C316.6 106.3 315.7 107.9 315.2 109.7L285 201.9H162.1L132.9 109.7C132.4 107.9 131.4 106.3 130.2 104.9C128.1 103.6 127.4 102.5 125.7 101.9C123.1 101.2 122.1 100.1 120.3 101.1C118.5 101.3 116.7 101.9 115.1 102.9C113.1 104.2 111.5 106.2 110.6 108.5L65.94 224.9L65.47 226.1C59.05 242.9 58.26 261.3 63.22 278.6C68.18 295.9 78.62 311.1 92.97 321.9L93.14 322L93.52 322.3L161.4 373.2L215.6 414.1C217.1 415.1 220.9 416.9 223.9 416.9C226.9 416.9 229.9 415.1 232.3 414.1L286.4 373.2L354.8 322L355 321.9C369.4 311 379.8 295.8 384.8 278.6C389.7 261.3 388.1 242.9 382.5 226.1L382.1 224.9z"/>
+                        </svg>
+                      </button>
+                      <button type="button" onclick="window.location.href='https://github.com/iamariezflores';" class="-mr-3 p-3 rounded transition hover:bg-purple-900 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 496 512">
+                          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Similac Menu -->
+
                 <!-- Notifications Sidebar -->
                 <div
                     id="notifications-area"
-                    class="absolute top-0 right-0 bottom-0 flex flex-col bg-white bg-opacity-75 backdrop-filter backdrop-blur-lg w-96 dark:bg-gray-800 dark:bg-opacity-75 dark:backdrop-filter dark:backdrop-blur-lg"
+                    class="absolute top-0 right-0 bottom-0 flex flex-col w-screen xl:w-96 bg-white bg-opacity-75 backdrop-filter backdrop-blur-lg dark:bg-gray-800 dark:bg-opacity-75 dark:backdrop-filter dark:backdrop-blur-lg"
                     x-show="notificationsArea"
                     x-transition:enter="transition ease-out duration-300"
                     x-transition:enter-start="transform opacity-0 translate-x-full"
@@ -118,11 +238,11 @@
 
                 <!-- Notifications -->
                     <div class="flex-grow p-4 space-y-4">
-                        <div class="text-right">
+                        <!--<div class="text-right">
                             <a class="text-sm text-blue-900 hover:text-blue-600 active:text-blue-900 font-medium dark:text-blue-600 dark:hover:text-blue-400 dark:active:text-blue-600" href="javascript:void(0)">Manage notifications</a>
-                        </div>
+                        </div>-->
                         <div class="space-y-2">
-                            <div class="text-center">
+                            <!--<div class="text-center">
                                 <h2 class="flex items-center justify-center space-x-1 font-medium text-sm">
                                 <svg class="inline-block w-5 h-5 opacity-50" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 7.75C4.75 6.64543 5.64543 5.75 6.75 5.75H17.25C18.3546 5.75 19.25 6.64543 19.25 7.75V16.25C19.25 17.3546 18.3546 18.25 17.25 18.25H6.75C5.64543 18.25 4.75 17.3546 4.75 16.25V7.75Z"></path>
@@ -130,27 +250,33 @@
                                 </svg>
                                 <span>Email</span>
                                 </h2>
-                            </div>
+                            </div>-->
                             <a class="block p-3 bg-white rounded bg-opacity-50 text-sm space-y-1 hover:bg-opacity-25 active:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 dark:active:bg-opacity-30" href="javascript:void(0)">
                                 <h3 class="font-medium">
-                                Welcome to Windows 11!
+                                Contact Me
                                 </h3>
                                 <p class="text-gray-700 dark:text-gray-400 leading-5">
-                                Well, not exactly but it was a fun mini side project. Waiting for the next version of Windows and excited for the upcoming UI redesign.
+                                Have an idea in mind that you want to be converted into an App?
                                 </p>
-                                <p class="text-gray-600 dark:text-gray-500">
-                                June 17, 2021
+                                <p class="text-white dark:text-white">
+                                  Email me at: ariezflores@outlook.com
+                                </p>
+                                <p class="text-white dark:text-white">
+                                  Call me at: (+63) 995-972-7628
+                                </p>
+                                <p class="text-white dark:text-white">
+                                  Telegram at: @aerizflores
                                 </p>
                             </a>
                             <a class="block p-3 bg-white rounded bg-opacity-50 text-sm space-y-1 hover:bg-opacity-25 active:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 dark:active:bg-opacity-30" href="https://tailkit.com">
                                 <h3 class="font-medium mb-1">
-                                Are you using Tailwind CSS in your next project?
+                                This website is developed using:
                                 </h3>
                                 <p class="text-gray-700 dark:text-gray-400 leading-5">
-                                I have been working on Tailkit for over a year now, a library of fully responsive UI components which can help you design web apps and websites. Be sure to check it out!
+                                TailwindCSS and Alpine JS and was based on a template by Pixelcave
                                 </p>
                                 <p class="text-gray-600 dark:text-gray-500">
-                                June 17, 2021
+                                Last Updated at: June 17, 2021
                                 </p>
                             </a>
                         </div>
@@ -158,7 +284,7 @@
                     <!-- END Notifications -->
 
                     <!-- Actions -->
-                    <div class="flex-none p-4 space-y-4">
+                    <!--<div class="flex-none p-4 space-y-4">
                         <div class="flex justify-between">
                             <a class="text-sm text-blue-900 hover:text-blue-600 active:text-blue-900 font-medium dark:text-blue-600 dark:hover:text-blue-400 dark:active:text-blue-600" href="javascript:void(0)">Expand</a>
                             <a class="text-sm text-blue-900 hover:text-blue-600 active:text-blue-900 font-medium dark:text-blue-600 dark:hover:text-blue-400 dark:active:text-blue-600" href="javascript:void(0)">Clear all notifications</a>
@@ -202,10 +328,11 @@
                                 <span>Network</span>
                             </button>
                         </div>
-                    </div>
+                    </div>-->
                     <!-- END Actions -->
                 </div>
                 <!-- END Notifications Sidebar -->
+                
             </div>
             <!-- END Desktop -->
 
@@ -233,13 +360,15 @@
                           <img class="relative w-6 h-6" src="img/icons/desktop.png" alt="Full screen mode">
                         </span>
                     </button>
-                    <button type="button" @click="darkMode = !darkMode" class="relative group focus:outline-none bg-white rounded transition duration-75 bg-opacity-0 hover:bg-opacity-50 active:bg-opacity-75 dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-25 dark:active:bg-opacity-50">
+                    <!--<button type="button" @click="darkMode = !darkMode" class="relative group focus:outline-none bg-white rounded transition duration-75 bg-opacity-0 hover:bg-opacity-50 active:bg-opacity-75 dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-25 dark:active:bg-opacity-50">
                         <span class="block p-2 transform transition duration-75 active:scale-90">
                           <img class="relative w-6` h-6" src="img/icons/computer-dark.png" alt="Dark mode">
                         </span>
-                    </button>
+                    </button>-->
                 </nav>
                 <!-- END Apps -->
+
+                
 
                 <!-- Notifications Area -->
                 
