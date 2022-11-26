@@ -27,7 +27,7 @@
                 x-transition:leave-end="transform opacity-0 translate-y-60"
                 @click.away="startMenu = false"
                 >
-                <div class="xl:pt-20 sm:pt-32 px-12 xl:flex-grow xl:px-12 xl:py-10 xl:space-y-6 sm:max-h-screen sm:overflow-y-scroll xl:overflow-hidden">
+                <div class="xl:pt-10 sm:pt-32 px-12 xl:flex-grow xl:px-12 xl:py-10 xl:space-y-6 md:max-h-screen md:overflow-y-scroll xl:overflow-hidden">
                     <div class="xl-space-y-4">
                         <div class="flex items-center justify-between mb-6 xl:mb-0">
                             <h2 class="font-semibold sm:text-2xl xl:text-lg">Unity Projects (Published)</h2>
@@ -38,7 +38,7 @@
                               </svg>
                             </a>
                         </div>
-                        <div class="grid grid-cols-2 xl:grid-cols-4 md:grid-cols-4 gap-4 md:gap-1 xl:gap-1 text-center xl:mt-4">
+                        <div class="grid grid-cols-2 xl:grid-cols-4 md:grid-cols-4 gap-4 md:gap-1 xl:gap-1 text-center xl:mt-2">
                             <a class="block p-3 font-medium text-sm rounded transition hover:bg-blue-200 active:bg-transparent focus:outline-none dark:bg-black dark:bg-opacity-0 dark:hover:bg-opacity-20 dark:active:bg-opacity-30" href="https://play.google.com/store/apps/details?id=com.lrnventures.a.adb.resultsreality" target="_blank">
                                 <img class="xl:w-10 sm:w-28 mx-auto mb-2" src="img/icons/adb_rr_logo.png" alt="Results Reality">
                                 <span class="sm:text-xl xl:text-sm">Asian Development Bank - </span>
@@ -258,9 +258,11 @@
                            Simatar is a series of Augmented Reality App for DOST-SEI
                           </p>
                           <div class="pt-6 flex items-center justify-between sm:text-2xl xl:text-sm">
-                            <a href="https://play.google.com/store/apps/details?id=com.zeteoinnovations.simatar.neo" target="_blank"><img class="xl:w-10 sm:w-28 mx-auto mb-2" src="img/icons/simatar_comets.jpg" alt="simatar comets"></a>
-                            <a href="https://play.google.com/store/apps/details?id=com.zeteoinnovations.simatar.matter" target="_blank"><img class="xl:w-10 sm:w-28 mx-auto mb-2" src="img/icons/simatar_matter.jpg" alt="simatar matter"></a>
-                            <a href="https://play.google.com/store/apps/details?id=com.LRNVenturesZeteoAcademy.SimatarCell target="_blank"><img class="xl:w-10 sm:w-28 mx-auto mb-2" src="img/icons/simatar_cell.jpg" alt="simatar cell"></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.zeteoinnovations.simatar.neo" target="_blank"><img class="xl:w-10 sm:w-28 mx-auto mb-2" src="img/icons/simatar_comets.jpg" alt="simatar comets">Simatar Comets</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.zeteoinnovations.simatar.matter" target="_blank"><img class="xl:w-10 sm:w-28 mx-auto mb-2" src="img/icons/simatar_matter.jpg" alt="simatar matter">Simatar Matter</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.LRNVenturesZeteoAcademy.SimatarCell" target="_blank"><img class="xl:w-10 sm:w-28 mx-auto mb-2" src="img/icons/simatar_cell.jpg" alt="simatar cell">Simatar Cell</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.zeteoinnovations.simatar.storm" target="_blank"><img class="xl:w-10 sm:w-28 mx-auto mb-2" src="img/icons/simatar_storm.jpg" alt="simatar storm">Simatar Storm</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.LRNVenturesZeteoAcademy.SimatarEarthquakeandFaults" target="_blank"><img class="xl:w-10 sm:w-28 mx-auto mb-2" src="img/icons/simatar_faults.jpg" alt="simatar faults">Simatar Faults</a>
                           </div>
                           
                       </div>
@@ -591,7 +593,10 @@
     }, 1000);
 
     var w = window.innerWidth;
-    var h = window.innerHeight; 
+    var h = window.innerHeight;
+    
+    console.log(w);
+    console.log(h);
 
   </script>
 </body>
