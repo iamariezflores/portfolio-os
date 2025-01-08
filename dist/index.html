@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquilino Flores</title>
+  <link href="output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+  <style>
+    /* Typewriter effect animation */
+    .typewriter {
+      display: inline-block;
+      border-right: 3px solid;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(30) 1s normal both, blinkCaret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blinkCaret {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* Sidebar transition */
+    .settings-sidebar {
+      transition: transform 0.3s ease-in-out;
+      height: 100vh;
+    }
+
+    .settings-sidebar.open {
+      transform: translateX(0);
+    }
+
+    .settings-sidebar {
+      transform: translateX(100%);
+    }
+
+    /* Background image (fixed scroll) */
+    .bg-custom {
+      background-image: url('img/grid.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px; 
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .modal-footer {
+      text-align: right;
+    }
+
+    .modal-close {
+      background-color: #f44336;
+      color: white;
+      font-size: 1rem;
+      padding: 3px 6px;
+      width: 24px;
+      height: 24px;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      background-color: #d32f2f;
+    }
+
+    /* Modal Content Styling */
+    .modal-content {
+      background-color: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 500px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .modal-body {
+      margin-top: 20px;
+    }
+
+    /* Project List Styling */
+    .project-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .project-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .project-name {
+      font-size: 1.2em;
+      color: #4b6cb7;
+      transition: color 0.3s ease;
+    }
+
+    .project-name:hover {
+      color: #3a4b76;
+      text-decoration: underline;
+    }
+
+    .project-role {
+      font-size: 1em;
+      color: #6b7280;
+      margin-top: 5px;
+    }
+
+    /* Modal Close Button */
+    .modal-close {
+      background-color: #f44336;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal-close:hover {
+      background-color: #d32f2f;
+    }
+
+    /* Responsiveness: On smaller screens, make the text size a bit smaller */
+    @media (max-width: 600px) {
+      .project-name {
+        font-size: 1em;
+      }
+
+      .modal-header {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-custom text-gray-900 font-sans flex items-center justify-center min-h-screen">
+
+  <!-- Content -->
+  <div class="max-w-sm mx-auto bg-white rounded-lg p-8 border-dashed border-4 border-black text-center">
+    <!-- Profile Avatar -->
+    <img src="me.jpeg" alt="Profile Avatar" class="w-32 h-32 rounded-full mx-auto mb-4">
+    
+    <!-- Typewriter effect for name -->
+    <h1 class="text-2xl font-bold mb-4 p-2">
+      <span class="typewriter text-black">Hello, my name is Aquilino</span>
+    </h1>
+    
+    <!-- Experience Text -->
+    <p class="text-sm mb-4">Experienced Software Developer/Engineer with 17 years of experience.</p>
+    
+    <!-- LinkedIn Profile Link -->
+    <a href="https://www.linkedin.com/in/aquilino-navarro-flores/" class="text-blue-500 text-sm hover:underline" target="_blank">
+      Visit my LinkedIn Profile
+    </a>
+  </div>
+
+  <!-- Start Menu (hidden by default) -->
+  <div id="startMenu" class="hidden absolute bottom-[2.69em] left-0 w-56 p-4 ml-[0.15em] mr-[0.15em] bg-gray-800 text-white rounded-lg shadow-lg z-10">
+    <div class="flex flex-col gap-2">
+      <a href="#" onclick="openWindow('Profile')" class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30">
+          <rect x="10" y="30" width="80" height="60" fill="#f1c40f" stroke="#d35400" stroke-width="3"/>
+          <rect x="10" y="10" width="40" height="20" fill="#f39c12" stroke="#e67e22" stroke-width="3"/>
+        </svg>        
+        Profile
+      </a>
+      <a href="#" onclick="openWindow('Projects')" class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30">
+          <rect x="10" y="30" width="80" height="60" fill="#f1c40f" stroke="#d35400" stroke-width="3"/>
+          <rect x="10" y="10" width="40" height="20" fill="#f39c12" stroke="#e67e22" stroke-width="3"/>
+        </svg>  
+        Projects
+      </a>
+      <a href="#" onclick="openWindow('Contact')" class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30">
+          <rect x="10" y="30" width="80" height="60" fill="#f1c40f" stroke="#d35400" stroke-width="3"/>
+          <rect x="10" y="10" width="40" height="20" fill="#f39c12" stroke="#e67e22" stroke-width="3"/>
+        </svg>  
+        Contact Me
+      </a>
+      <!-- <a href="#" onclick="openWindow('Blog')" class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30">
+          <rect x="10" y="30" width="80" height="60" fill="#f1c40f" stroke="#d35400" stroke-width="3"/>
+          <rect x="10" y="10" width="40" height="20" fill="#f39c12" stroke="#e67e22" stroke-width="3"/>
+        </svg>  
+        My Blog
+      </a> -->
+    </div>
+  </div>
+
+  <!-- Taskbar -->
+  <div class="fixed bottom-0 w-full h-10 bg-gray-800 text-white flex justify-between items-center px-4 z-10">
+    <!-- Taskbar Left: Start Button -->
+    <div class="flex items-center">
+      <button onclick="toggleStartMenu()" class="text-white">Start</button>
+    </div>
+
+    <!-- Taskbar Right: Clock and Settings -->
+    <div class="flex items-center space-x-4">
+      <div class="text-xs" id="clock"></div>
+    </div>
+  </div>
+
+  <!-- Settings Sidebar -->
+  <div id="settingsSidebar" class="settings-sidebar fixed top-0 right-0 w-64 bg-gray-800 text-white p-4 shadow-lg z-20">
+    <button class="bg-red-500 text-white py-1 px-2 rounded cursor-pointer absolute top-4 left-4" onclick="closeSettingsSidebar()">Close Sidebar</button>
+    <h2 class="text-xl mb-4">Settings</h2>
+    <a href="#" class="block py-2 hover:bg-gray-700">General Settings</a>
+    <a href="#" class="block py-2 hover:bg-gray-700">Network Settings</a>
+    <a href="#" class="block py-2 hover:bg-gray-700">Display Settings</a>
+    <a href="#" class="block py-2 hover:bg-gray-700">Privacy</a>
+  </div>
+
+  <!-- Modal: My Profile -->
+  <div id="modalProfile" class="modal xl:p-0 p-4">
+    <div class="modal-content">
+        <div class="modal-header flex justify-between items-center">
+            <span class="text-lg font-semibold">Who am I?</span>
+            <button class="modal-close text-white bg-red-500 hover:bg-red-600 p-1 rounded" onclick="closeModal('Profile')">X</button>
+        </div>
+        <div class="modal-body text-justify">
+            <p class="mb-4">
+                Hi, I’m <b>Aquilino Navarro Flores</b>, a Software Engineer with 17 years of experience in web, mobile, and game development. I specialize in technologies like <b>PHP</b>, <b>Laravel</b>, <b>JavaScript</b>, <b>Unity Engine</b>, and <b>C#</b>, and have extensive experience with <b>DevOps</b>, <b>project management</b>, and delivering scalable, high-performance solutions.
+            </p>
+            <a href="resume.pdf" download class="text-blue-500">Download my resume</a>
+            <p class="mt-2">Skills: PHP, Laravel, Unity Engine, C#, Flutter, Docker, AWS, Git, and more.</p>
+        </div>
+    </div>
+  </div>
+ 
+  <!-- Modal: My Projects -->
+  <div id="modalProjects" class="modal xl:p-0 p-4">
+    <div class="modal-content">
+      <!-- Modal Header with Close Button -->
+      <div class="modal-header flex justify-between items-center">
+        <span class="text-lg font-semibold">Projects I've Worked On:</span>
+        <button class="modal-close text-white bg-red-500 hover:bg-red-600 p-1 rounded" onclick="closeModal('Projects')">X</button>
+      </div>
+      <div class="modal-body mt-4">
+        <ul class="project-list space-y-4">
+          <li>
+            <div class="project-item">
+              <h3 class="project-name text-lg font-semibold"><a href="https://www.mailerlite.com/" target="_blank">Mailerlite - Mailerlite Classic</a></h3>
+              <p class="project-role text-gray-500">Role: Backend Developer</p>
+            </div>
+          </li>
+          <li>
+            <div class="project-item">
+              <h3 class="project-name text-lg font-semibold"><a href="https://www.mailercheck.com/" target="_blank">Mailerlite - MailerCheck</a></h3>
+              <p class="project-role text-gray-500">Role: Backend Developer</p>
+            </div>
+          </li>
+          <li>
+            <div class="project-item">
+              <h3 class="project-name text-lg font-semibold"><a href="https://appstorespy.com/apps/play/Pasacao911App/com.lrnventures.com.a.drrm.app.pasacao.citizen" target="_blank">LRN Ventures Inc - Pasacao 911 App</a></h3>
+              <p class="project-role text-gray-500">Role: Mobile App/Backend/Lead Developer/Project Manager</p>
+            </div>
+          </li>
+          <li>
+            <div class="project-item">
+              <h3 class="project-name text-lg font-semibold"><a href="https://starbooks.ph/" target="_blank">LRN Ventures Inc - Starbooks App and Finder App</a></h3>
+              <p class="project-role text-gray-500">Role: Mobile App/Backend/Lead Developer/Project Manager</p>
+            </div>
+          </li>
+          <li>
+            <div class="project-item">
+              <h3 class="project-name text-lg font-semibold"><a href="https://starbooks.ph/" target="_blank">LRN Ventures Inc - ADB Results Reality AR/VR/Website</a></h3>
+              <p class="project-role text-gray-500">Role: Mobile App - AR, VR, Web design, Lead Developer/Project Manager</p>
+            </div>
+          </li>
+          <li>
+            <div class="project-item">
+              <h3 class="project-name text-lg font-semibold"><a href="https://play.google.com/store/apps/dev?id=6405257615023524098&hl=en" target="_blank">LRN Ventures Inc - DOST-STII Simatar</a></h3>
+              <p class="project-role text-gray-500">Role: Mobile App - AR, Lead Developer, Backend Developer, Project Manager</p>
+            </div>
+          </li>
+          <li>
+            <div class="project-item">
+              <h3 class="project-name text-lg font-semibold"><a href="https://youtu.be/lb_Wu4OgIlc?t=22" target="_blank">LRN Ventures Inc - Similac Gainschool Promotional App</a></h3>
+              <p class="project-role text-gray-500">Role: Mobile App - Game, Lead Developer, Backend Developer</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Contact Me -->
+  <div id="modalContact" class="modal xl:p-0 p-4">
+    <div class="modal-content">
+      <div class="modal-header flex justify-between items-center">
+        <span class="text-lg font-semibold">Contact Me:</span>
+        <button class="modal-close text-white bg-red-500 hover:bg-red-600 p-1 rounded" onclick="closeModal('Contact')">X</button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-4">You can reach me via the following:</p>
+        <ul>
+          <li>
+            <a href="mailto:aries.flores@gmail.com" class="text-green-950 font-semibold">
+              <i class="fas fa-envelope mr-2"></i> aries.flores at gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/aquilino-navarro-flores/" target="_blank">
+              <i class="fab fa-linkedin mr-2"></i> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/iamariezflores" target="_blank">
+              <i class="fab fa-github mr-2"></i> GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/aeriznavarro" target="_blank">
+              <i class="fab fa-twitter mr-2"></i> Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Footer with dynamic copyright -->
+      <div class="modal-footer mt-4 text-center flex justify-center w-full">
+        <span>&copy; <span id="copyrightYear"></span> Your Name. All Rights Reserved.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Blog -->
+  <div id="modalBlog" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">My Blog</div>
+      <div class="modal-body">
+        <p>Check out my latest posts:</p>
+        <ul>
+          <li><a href="https://dev.to/username/blogpost1" target="_blank">How to Build a Full-Stack App with React and Node.js</a></li>
+          <li><a href="https://medium.com/@username/blogpost2" target="_blank">Introduction to Cloud-Native Development</a></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-close" onclick="closeModal('Blog')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //copyright
+    document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+    
+    // Open Modal
+    function openWindow(section) {
+      document.getElementById('modal' + section).style.display = 'flex';
+    }
+
+    // Close Modal
+    function closeModal(section) {
+      document.getElementById('modal' + section).style.display = 'none';
+    }
+
+    // Toggle Start Menu
+    function toggleStartMenu() {
+      const startMenu = document.getElementById('startMenu');
+      startMenu.classList.toggle('hidden');
+    }
+
+    // Show Settings Sidebar
+    function openSettingsSidebar() {
+      const sidebar = document.getElementById('settingsSidebar');
+      sidebar.classList.add('open');
+    }
+
+    // Close Settings Sidebar
+    function closeSettingsSidebar() {
+      const sidebar = document.getElementById('settingsSidebar');
+      sidebar.classList.remove('open');
+    }
+
+    // Display current date and time on taskbar
+    function updateClock() {
+      const clockElement = document.getElementById('clock');
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const day = daysOfWeek[now.getDay()];
+      const date = now.toLocaleDateString();
+
+      clockElement.textContent = `${day}, ${date} ${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+
+</html>
